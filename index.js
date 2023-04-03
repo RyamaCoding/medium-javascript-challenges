@@ -1,50 +1,50 @@
 //* if given a falsy value as element 1 return the falsy value *//
 
-function ifFalsy(num1, num2) {
-  return !num1 ? num1 : num2;
+function returnFalsy(elem1, elem2) {
+  return !elem1 ? elem1 : elem2;
 }
 
-console.log(ifFalsy(0, "Dog"));
+console.log(returnFalsy(0, 'dog'))
 
 //* return the length of any given array *//
 
-function arrLength(arr) {
-  return arr.length;
+function arrayL(arr) {
+
+  return arr.length
 }
 
-console.log(arrLength([4, 5, 6]));
+console.log(arrayL([4, 5, 6, 7]))
 
 //* return the last number of any given array *//
 
-function arrLengths(arr) {
-  return arr[arr.length - 1];
+function arrLast(arr){
+  return arr[arr.length - 1]
 }
 
-console.log(arrLengths([4, 5, 6]));
+console.log(arrLast([3, 4, 7, 8]))
 
 //* find the sum of all elements in the array *//
 
-function sum(arr) {
-  let sum = 0;
+function sum(arr){
+  let sum = 0
 
-  for (i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
+  for(i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
   }
 
   return sum;
 }
 
-console.log(sum([4, 5, 6]));
+console.log(sum([1, 2, 3, 4, 5]))
 
 //* add up the numbers from a single number *//
 
 function addNum(num) {
-  let sum = 0;
+  let sum = 0
 
   for (i = 1; i <= num; i++) {
     sum = sum + i;
   }
-
   return sum;
 }
 
@@ -52,26 +52,26 @@ console.log(addNum(3));
 
 //* convert seconds into a minute and seconds timer *//
 
-function secondsToTimer(seconds) {
-  let timerMinutes = Math.floor(seconds / 60);
-  let timerSeconds = seconds % 60;
+function calcTime (seconds) {
+  let secondsTimer = seconds % 60;
+  let minutesTimer = Math.floor(seconds / 60)
 
-  if (timerMinutes.toString().length === 1) {
-    timerMinutes = "0" + timerMinutes;
+  if (minutesTimer.toString().length === 1) {
+    minutesTimer = '0' + minutesTimer
   }
 
-  return timerMinutes + ":" + timerSeconds;
+  return minutesTimer + ':' + secondsTimer; 
 }
 
-console.log(secondsToTimer(70));
+console.log(calcTime(40))
 
 //* find the biggest number of an element *//
 
 function biggestNum(arr) {
-  let max = arr[0];
+  let max = arr[0]
 
   for (i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
+    if (max < arr[i]) {
       max = arr[i];
     }
   }
@@ -79,12 +79,20 @@ function biggestNum(arr) {
   return max;
 }
 
-console.log(biggestNum([-10, 50, 30, 20]));
+console.log(biggestNum([-10, 50, 100, 20]));
 
 //* reverse the string abc to cba and so on *//
 
 function reverseString(str) {
-    return str.split('').reverse().join('');
+  return str.split('').reverse().join('')
 }
 
-console.log(reverseString('abc'))
+console.log(reverseString('Raghu'))
+
+/* break */
+
+function isLoggedIn(str1, str2) {
+  return str1 === 'LOGGED_IN' || str2 === 'SUBSCRIBED';
+}
+
+console.log(isLoggedIn('LOGGED_OUT', 'UNSUBSCRIBED'))
